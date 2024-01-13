@@ -1,6 +1,6 @@
-<div data-te-datatable-init id="loan-details" class="bg-gray-100 p-4">
-    <h2 class="text-2xl font-bold mb-4">Loan Details</h2>
-    <table class="table-auto w-full bg-white shadow-md rounded mb-4" id="loanDetailsTable">
+<div data-te-datatable-init id="loan-details" class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+    <h2 class="flex items-center font-sans font-bold break-normal text-indigo-500 px-2 py-8 text-xl md:text-2xl">Loan Details</h2>
+    <table class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;" id="loanDetailsTable">
         <thead class="bg-gray-800 text-white">
             <tr>
                 <th class="px-4 py-2">Client ID</th>
@@ -22,6 +22,5 @@
     }
 </style>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" defer></script>
+
 <script src="/js/loan-details.js" defer></script>

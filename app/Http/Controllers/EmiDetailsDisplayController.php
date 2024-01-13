@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 
 class EmiDetailsDisplayController extends Controller
 {
-   public function index()
+    public function index()
     {
-        $emiDetails = DB::table('emi_details')->get();
-        return view('emi_details_display.index', compact('emiDetails'));
+        try {
+            $emiDetails = DB::table('emi_details')->paginate(100);
+            return view('emi_details_display.index', compact('emiDetails'));
+        } catch (QueryException $e) {
+            return response()->view('error_page', ['error' => 'An error occurred while fetching data.']);
+        }
     }
 }
